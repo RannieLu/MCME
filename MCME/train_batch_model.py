@@ -32,10 +32,6 @@ args = parser.parse_args()
 dataset = args.dataset
 rate = args.rate
 
-
-a = 1.0
-b = 1.0
-dim = 128
 try:
     training_data_by_type = pickle.load(open("other_model/data/train_edges_other_model_" +dataset +"_" +str(rate)  +".pkl", 'rb'))
     selected_true_edges  = pickle.load(open("other_model/data/test_edges_other_model_" +dataset +"_" +str(rate)  +".pkl", 'rb'))
@@ -137,7 +133,7 @@ for e_i in range(5):
         optimizer.step()
         if epoch == 1999:
             for la in range(1, layersNum+1):
-                base_embedding, base_mean, base_std, v_embedding = model(features.to)
+                base_embedding, base_mean, base_std, v_embedding = model(features)
                 Z= v_embedding[la-1]
 
                 pickle.dump(Z, open("model_results/" +dataset +"_" + str(la)+"_"+ str(rate)+"_mymodel" +".pkl", "wb"))
