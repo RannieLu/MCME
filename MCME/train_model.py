@@ -139,7 +139,7 @@ for e_i in range(5):
                 avg_ap += test_ap
     print("epoch time ", time.time()-t_1)
     print("-----------")
-    print("dataset ", dataset," dim ", rate , " epoch ", e_i, " ", multi_roc/len(new_test_edges.keys()) , "  " , multi_ap/len(new_test_edges.keys()) )
+    print("dataset ", dataset," rate ", rate , " epoch ", e_i, " ", multi_roc/len(new_test_edges.keys()) , "  " , multi_ap/len(new_test_edges.keys()) )
 print("----------------")
 print("dataset ", dataset," multi ", rate, "  ",  avg_roc/(len(new_test_edges.keys())*5), ' ', avg_ap/(len(new_test_edges.keys())*5))
 
